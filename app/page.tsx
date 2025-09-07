@@ -1,4 +1,4 @@
-import { LoginForm } from "@/components/auth/login-form"
+import { FormularioLogin } from "@/components/auth/formulario-login"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 export default function HomePage() {
@@ -33,7 +33,7 @@ export default function HomePage() {
             <CardDescription>Entre com suas credenciais para acessar os módulos de aprendizagem</CardDescription>
           </CardHeader>
           <CardContent>
-            <LoginForm />
+            <FormularioLogin />
           </CardContent>
         </Card>
 
