@@ -29,11 +29,10 @@ export function FormularioLogin() {
     try {
       const response = await api.login(email, senha)
 
-      // Redireciona baseado no tipo de usuário
       if (response.usuario.tipo === "admin") {
-        router.push("/admin/painel")
+        router.push("/admin/dashboard")
       } else {
-        router.push("/estudante/painel")
+        router.push("/student/dashboard")
       }
     } catch (error) {
       setErro(error instanceof Error ? error.message : "Erro ao fazer login")
@@ -63,7 +62,7 @@ export function FormularioLogin() {
       await api.registro(nome, email, senha)
       // Após registro bem-sucedido, faz login automaticamente
       await api.login(email, senha)
-      router.push("/estudante/painel")
+      router.push("/student/dashboard")
     } catch (error) {
       setErro(error instanceof Error ? error.message : "Erro ao criar conta")
     } finally {
